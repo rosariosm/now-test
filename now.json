@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@now/next" },
+    { "src": "server/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/email", "methods": ["GET"], "dest": "server/email.js" },
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ]
+}
